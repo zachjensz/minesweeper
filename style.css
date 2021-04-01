@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    font-family: 'Open Sans', sans-serif;
+}
+
+#game {
+    width: 80%;
+    margin: auto;
+    overflow: auto;
+    display: grid;
+}
+
+.tile {
+    border: 2px outset var(--tileBorder);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cover {
+    background-color: var(--tile);
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.cover:hover {
+    background-color: var(--tileHover);
+    cursor: pointer;
+}
+.value {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+    user-select: none;
+    display: none;
+}
+.tile[data-revealed] .value {
+    display: block;
+}
+.tile[data-revealed] .cover {
+    display: none;
+}
+
+.value[data-value='9'] {
+    color: hsl(0, 0%, 100%);
+}
+.tile[data-revealed] .value[data-value='0'] {
+    display: none;
+}
+.value[data-value='1'] {
+    color: var(--v1);
+}
+.value[data-value='2'] {
+    color: var(--v2);
+}
+.value[data-value='3'] {
+    color: var(--v3);
+}
+.value[data-value='4'] {
+    color: var(--v4);
+}
+.value[data-value='5'] {
+    color: var(--v5);
+}
+.value[data-value='6'] {
+    color: var(--v6);
+}
+.value[data-value='7'] {
+    color: var(--v7);
+}
+.value[data-value='8'] {
+    color: var(--v8);
+}
