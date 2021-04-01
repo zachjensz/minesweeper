@@ -1,9 +1,9 @@
 :root {
-    --background: #222;
-    --tile: #aaa;
-    --tileHover: #b8b8b8;
-    --tileBorder: #555;
-    --text: #ddd;
+    --background: #bcbcbc;
+    --tile: #bcbcbc;
+    --tileHover: #c6c6c6;
+    --tileBorder: #ccc;
+    --text: #222;
     --v1: #1a1cc2;
     --v2: #227223;
     --v3: #ff0000;

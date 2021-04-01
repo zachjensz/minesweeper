@@ -6,6 +6,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 #game {
     width: 80%;
     margin: auto;
@@ -14,13 +18,16 @@ body {
 }
 
 .tile {
-    border: 2px outset var(--tileBorder);
+    border: 0.15rem solid var(--tileBorder);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .cover {
     background-color: var(--tile);
+    border: 0.4rem outset var(--tileBorder);
+    font-size: 2em;
+    text-align: center;
     display: block;
     width: 100%;
     height: 100%;
@@ -44,7 +51,7 @@ body {
 }
 
 .value[data-value='9'] {
-    color: hsl(0, 0%, 100%);
+    color: var(--text);
 }
 .tile[data-revealed] .value[data-value='0'] {
     display: none;

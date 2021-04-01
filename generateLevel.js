@@ -35,9 +35,6 @@ export default function generateLevel(width, height, minefactor) {
             if (leftValid && grid[tile - 1] === 9) mines++ // Left
             // Set in Array
             grid[tile] = mines
-
-            // Debug
-            console.log(`v:${v}  h:${h} n:${v * width + h} m:${mines}`)
         }
     }
 
