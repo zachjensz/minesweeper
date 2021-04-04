@@ -40,6 +40,9 @@ export default function generateLevel(width, height, minefactor) {
 
     // Render HTML
     grid.forEach(renderTile)
+
+    // Return array of tiles
+    return grid
 }
 
 function renderTile(item, index) {
@@ -48,6 +51,7 @@ function renderTile(item, index) {
     tile.querySelector('.value').innerText = item
     if (item === 9) tile.querySelector('.value').innerText = '#'
     tile.querySelector('.value').setAttribute('data-value', item)
+    tile.querySelector('.value').setAttribute('data-index', index)
     game.appendChild(tile)
 }
 
