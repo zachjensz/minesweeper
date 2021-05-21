@@ -1,15 +1,15 @@
 :root {
-    --background: #bcbcbc;
-    --tile: #bcbcbc;
-    --tileHover: #c6c6c6;
-    --tileBorder: #ccc;
-    --text: #222;
-    --v1: #1a1cc2;
-    --v2: #227223;
-    --v3: #ff0000;
-    --v4: #0e0665;
-    --v5: #820203;
-    --v6: #008284;
-    --v7: #010101;
-    --v8: #838383;
+  --background: hsl(0, 0%, 95%);
+  --tile: hsl(0, 0%, 90%);
+  --tileHover: hsl(0, 0%, 80%);
+  --tileBorder: hsl(0, 0%, 90%);
+  --text: #222;
+  --v1: mediumblue;
+  --v2: forestgreen;
+  --v3: gold;
+  --v4: crimson;
+  --v5: darkorange;
+  --v6: magenta;
+  --v7: deeppink;
+  --v8: dimgrey;
 }

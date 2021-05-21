@@ -1,0 +1,15 @@
+:root {
+  --background: hsl(0, 0%, 5%);
+  --tile: hsl(0, 0%, 10%);
+  --tileHover: hsl(0, 0%, 20%);
+  --tileBorder: hsl(0, 0%, 10%);
+  --text: #eee;
+  --v1: dodgerblue;
+  --v2: lime;
+  --v3: gold;
+  --v4: crimson;
+  --v5: darkorange;
+  --v6: magenta;
+  --v7: deeppink;
+  --v8: wheat;
+}
