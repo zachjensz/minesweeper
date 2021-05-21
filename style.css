@@ -1,82 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
 
 body {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: 'Open Sans', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  font-family: 'Open Sans', sans-serif;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 #game {
-    width: 80%;
-    margin: auto;
-    overflow: auto;
-    display: grid;
+  width: 80%;
+  margin: auto;
+  overflow: auto;
+  display: grid;
 }
 
 .tile {
-    border: 0.15rem solid var(--tileBorder);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  border: 0.15rem solid var(--tileBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cover {
-    background-color: var(--tile);
-    border: 0.4rem outset var(--tileBorder);
-    font-size: 2em;
-    text-align: center;
-    display: block;
-    width: 100%;
-    height: 100%;
+  background-color: var(--tile);
+  border: 0.4rem outset var(--tileBorder);
+  font-size: 2em;
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 .cover:hover {
-    background-color: var(--tileHover);
-    cursor: pointer;
+  background-color: var(--tileHover);
+  cursor: pointer;
 }
 .value {
-    text-align: center;
-    font-size: 2em;
-    font-weight: bolder;
-    user-select: none;
-    display: none;
+  text-align: center;
+  font-size: 2em;
+  font-weight: bolder;
+  user-select: none;
+  display: none;
 }
 .tile.revealed .value {
-    display: block;
+  display: block;
 }
 .tile.revealed .cover {
-    display: none;
+  display: none;
 }
 
 .value[data-value='9'] {
-    color: var(--text);
+  color: var(--text);
 }
 .tile.revealed .value[data-value='0'] {
-    display: none;
+  display: none;
 }
 .value[data-value='1'] {
-    color: var(--v1);
+  color: var(--v1);
 }
 .value[data-value='2'] {
-    color: var(--v2);
+  color: var(--v2);
 }
 .value[data-value='3'] {
-    color: var(--v3);
+  color: var(--v3);
 }
 .value[data-value='4'] {
-    color: var(--v4);
+  color: var(--v4);
 }
 .value[data-value='5'] {
-    color: var(--v5);
+  color: var(--v5);
 }
 .value[data-value='6'] {
-    color: var(--v6);
+  color: var(--v6);
 }
 .value[data-value='7'] {
-    color: var(--v7);
+  color: var(--v7);
 }
 .value[data-value='8'] {
-    color: var(--v8);
+  color: var(--v8);
 }
