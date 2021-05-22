@@ -2,23 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="theme-dark.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" type="module"></script>
     <title>Minesweeper by Zach Jensz</title>
   </head>
   <body>
-    <main id="game"></main>
-    <template id="tile-template">
-      <div class="tile">
-        <div class="cover"></div>
-        <div class="value"></div>
-      </div>
-    </template>
-    <template id="flag-template">
-      <div class="flag">!</div>
-    </template>
+    <h3 class="title">Minesweeper</h3>
+    <div class="subtext">Mines Left: <span data-mine-count></span></div>
+    <div class="board"></div>
   </body>
 </html>
