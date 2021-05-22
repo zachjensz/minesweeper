@@ -64,7 +64,11 @@ body {
 }
 
 .board > [data-status='mine'] {
-  background-color: red;
+  background-color: var(--tile);
+  background-image: url('mine.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .board > [data-status='number'] {
