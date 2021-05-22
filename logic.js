@@ -68,6 +68,7 @@ export function revealTile(board, tile) {
     adjacentTiles.forEach(revealTile.bind(null, board))
   } else {
     tile.element.textContent = mines.length
+    tile.element.style.color = `var(--v${mines.length})`
   }
 }
 

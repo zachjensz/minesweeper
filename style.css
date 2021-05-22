@@ -72,5 +72,9 @@ body {
 }
 
 .board > [data-status='marked'] {
-  background-color: yellow;
+  background-color: var(--tile);
+  background-image: url('flag.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

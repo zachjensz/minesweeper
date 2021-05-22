@@ -8,7 +8,7 @@ import {
 } from './logic.js'
 
 const BOARD_SIZE = 12
-const NUMBER_OF_MINES = 20
+const NUMBER_OF_MINES = 32
 
 const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES)
 const boardElement = document.querySelector('.board')
