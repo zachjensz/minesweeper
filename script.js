@@ -13,7 +13,7 @@ const NUMBER_OF_MINES = 32
 const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES)
 const boardElement = document.querySelector('.board')
 const minesLeftText = document.querySelector('[data-mine-count]')
-const messageText = document.querySelector('.subtext')
+const messageText = document.querySelector('h2')
 
 board.forEach((row) => {
   row.forEach((tile) => {

@@ -1,5 +1,5 @@
 :root {
-  --tile-size: 5rem;
+  --tile-size: min(5rem, 6vmin);
 
   --background-color: hsl(0, 0%, 0%);
   --tile-color: hsl(0, 0%, 10%);
@@ -37,7 +37,6 @@ body {
 h1,
 h2 {
   margin: 0;
-  text-align: center;
 }
 
 .board {
@@ -59,21 +58,21 @@ h2 {
   background-color: var(--tile-color);
 }
 
-.board > [data-status="hidden"] {
+[data-status="hidden"] {
   cursor: pointer;
 }
 
-.board > [data-status="number"] {
+[data-status="number"] {
   background-color: transparent;
 }
 
-.board > [data-status="marked"],
-.board > [data-status="mine"] {
+[data-status="marked"],
+[data-status="mine"] {
   background-image: url("flag.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
-.board > [data-status="mine"] {
+[data-status="mine"] {
   background-image: url("mine.svg");
 }
