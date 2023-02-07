@@ -65,7 +65,7 @@ h2 {
 }
 
 [data-status="mine"] {
-  background: no-repeat center/cover url("mine.svg");
+  background: no-repeat center/cover url("/public/mine.svg");
 }
 [data-status="marked"] {
   position: relative;
@@ -74,5 +74,5 @@ h2 {
   content: '';
   position: absolute;
   inset: 0;
-  background: no-repeat center/cover url("flag.svg");
+  background: no-repeat center/cover url("/public/flag.svg");
 }
