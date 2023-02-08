@@ -31,7 +31,7 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   font-size: 2rem;
-  background-color: var(--background-color);
+  background: no-repeat, center/cover url("public/topography.svg") var(--background-color);
   color: var(--text-color);
 }
 h1,
