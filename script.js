@@ -51,9 +51,9 @@ function checkGameEnd() {
     boardElement.addEventListener('contextmenu', stopProp, { capture: true })
   }
 
-  if (win) messageText.textContent = 'You Win'
+  if (win) messageText.textContent = `You've won!!`
   if (lose) {
-    messageText.textContent = 'You Lose'
+    messageText.textContent = `Game Over!`
     board.forEach((row) => {
       row.forEach((tile) => {
         if (tile.status === TILE_STATUSES.MARKED) markTile(tile)
