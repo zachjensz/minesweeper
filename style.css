@@ -26,17 +26,25 @@ body {
 
 body {
   display: grid;
-  place-content: center;
-  gap: 0.5em;
-  margin: 0;
+  grid-template-columns: 20ch 9fr;
+  margin: 0 auto;
   font-family: system-ui, sans-serif;
   font-size: 2rem;
   background: no-repeat, center/cover url("public/topography.svg") var(--background-color);
   color: var(--text-color);
 }
-h1,
-h2 {
-  margin-block-end: 1rem;
+main,
+header {
+  display: grid;
+  place-content: center;
+}
+h1 {
+  margin: 1em;
+  margin-bottom: max(2em, 40vh);
+  text-align: center;
+}
+h1 img {
+  width: 1em;
 }
 
 .board {
