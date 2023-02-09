@@ -1,68 +1,74 @@
 import {
   TILE_STATUSES,
   createBoard,
+  populateBoard,
   markTile,
   revealTile,
   checkWin,
-  checkLose
-} from './logic.js'
+  checkLose,
+} from "./logic.js";
 
-const BOARD_SIZE = 12
-const NUMBER_OF_MINES = 32
+const BOARD_SIZE = 12;
+const MINE_COUNT = 32;
 
-const board = createBoard(BOARD_SIZE, NUMBER_OF_MINES)
-const boardElement = document.querySelector('.board')
-const minesLeftText = document.querySelector('[data-mine-count]')
-const messageText = document.querySelector('h2')
+const board = createBoard(BOARD_SIZE);
+const elBoard = document.querySelector(".board");
+const elMinesRemaining = document.querySelector("[data-mine-count]");
+const elStatus = document.querySelector("h2");
+let isBoardNew = true;
 
 board.forEach((row) => {
   row.forEach((tile) => {
-    boardElement.append(tile.element)
-    tile.element.addEventListener('click', () => {
-      revealTile(board, tile)
-      checkGameEnd()
-    })
-    tile.element.addEventListener('contextmenu', (e) => {
-      e.preventDefault()
-      markTile(tile)
-      listMinesLeft()
-    })
-  })
-})
-boardElement.style.setProperty('--size', BOARD_SIZE)
-minesLeftText.textContent = NUMBER_OF_MINES
+    elBoard.append(tile.element);
+    tile.element.addEventListener("click", () => {
+      if (isBoardNew) {
+        populateBoard(board, BOARD_SIZE, MINE_COUNT, tile);
+        isBoardNew = false;
+      }
+      revealTile(board, tile);
+      checkGameEnd();
+    });
+    tile.element.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      markTile(tile);
+      listMinesLeft();
+    });
+  });
+});
+elBoard.style.setProperty("--size", BOARD_SIZE);
+elMinesRemaining.textContent = MINE_COUNT;
 
 function listMinesLeft() {
   const markedTilesCount = board.reduce((count, row) => {
     return (
       count + row.filter((tile) => tile.status === TILE_STATUSES.MARKED).length
-    )
-  }, 0)
+    );
+  }, 0);
 
-  minesLeftText.textContent = NUMBER_OF_MINES - markedTilesCount
+  elMinesRemaining.textContent = MINE_COUNT - markedTilesCount;
 }
 
 function checkGameEnd() {
-  const win = checkWin(board)
-  const lose = checkLose(board)
+  const win = checkWin(board);
+  const lose = checkLose(board);
 
   if (win || lose) {
-    boardElement.addEventListener('click', stopProp, { capture: true })
-    boardElement.addEventListener('contextmenu', stopProp, { capture: true })
+    elBoard.addEventListener("click", stopProp, { capture: true });
+    elBoard.addEventListener("contextmenu", stopProp, { capture: true });
   }
 
-  if (win) messageText.textContent = `You've won!!`
+  if (win) elStatus.textContent = `You've won!!`;
   if (lose) {
-    messageText.textContent = `Game Over!`
+    elStatus.textContent = `Game Over!`;
     board.forEach((row) => {
       row.forEach((tile) => {
-        if (tile.status === TILE_STATUSES.MARKED) markTile(tile)
-        if (tile.mine) revealTile(board, tile)
-      })
-    })
+        if (tile.status === TILE_STATUSES.MARKED) markTile(tile);
+        if (tile.mine) revealTile(board, tile);
+      });
+    });
   }
 }
 
 function stopProp(e) {
-  e.stopImmediatePropagation()
+  e.stopImmediatePropagation();
 }
