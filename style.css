@@ -25,26 +25,26 @@ body {
 }
 
 body {
-  display: grid;
-  grid-template-columns: 20ch 9fr;
+  display: flex;
+  flex-flow: column nowrap;
+  place-items: center;
   margin: 0 auto;
   font-family: system-ui, sans-serif;
   font-size: 2rem;
-  background: no-repeat, center/cover url("public/topography.svg") var(--background-color);
+  background: no-repeat,
+    center/cover url("public/topography.svg") var(--background-color);
   color: var(--text-color);
 }
-main,
-header {
-  display: grid;
-  place-content: center;
-}
 h1 {
+  position: relative;
+  width: min-content;
   margin: 1em;
-  margin-bottom: max(2em, 40vh);
   text-align: center;
 }
 h1 img {
   width: 1em;
+  position: relative;
+  top: 0.09em;
 }
 
 .board {
@@ -60,7 +60,8 @@ h1 img {
   border: 2px solid var(--tile-border-color);
   user-select: none;
   font: bold 1.8em monospace;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='black' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E") var(--tile-color);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='32' viewBox='0 0 16 32'%3E%3Cg fill='black' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M0 24h4v2H0v-2zm0 4h6v2H0v-2zm0-8h2v2H0v-2zM0 0h4v2H0V0zm0 4h2v2H0V4zm16 20h-6v2h6v-2zm0 4H8v2h8v-2zm0-8h-4v2h4v-2zm0-20h-6v2h6V0zm0 4h-4v2h4V4zm-2 12h2v2h-2v-2zm0-8h2v2h-2V8zM2 8h10v2H2V8zm0 8h10v2H2v-2zm-2-4h14v2H0v-2zm4-8h6v2H4V4zm0 16h6v2H4v-2zM6 0h2v2H6V0zm0 24h2v2H6v-2z'/%3E%3C/g%3E%3C/svg%3E")
+    var(--tile-color);
 }
 
 [data-status="hidden"] {
@@ -78,7 +79,7 @@ h1 img {
   position: relative;
 }
 [data-status="marked"]::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: no-repeat center/cover url("public/flag.svg");
