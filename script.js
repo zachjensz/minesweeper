@@ -14,7 +14,7 @@ const MINE_COUNT = 32;
 const board = createBoard(BOARD_SIZE);
 const elBoard = document.querySelector(".board");
 const elMinesRemaining = document.querySelector("[data-mine-count]");
-const elStatus = document.querySelector("h2");
+const elStatus = document.querySelector("h1");
 let isBoardNew = true;
 
 board.forEach((row) => {
