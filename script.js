@@ -53,13 +53,13 @@ function checkGameEnd() {
   const lose = checkLose(board);
 
   if (win || lose) {
-    elBoard.addEventListener("click", stopProp, { capture: true });
     elBoard.addEventListener("contextmenu", stopProp, { capture: true });
+    setTimeout(() => document.body.addEventListener("click", () => location.reload()), 400)
   }
 
-  if (win) elStatus.textContent = `You've won!!`;
+  if (win) elStatus.textContent = `You've won!! Click to play again`;
   if (lose) {
-    elStatus.textContent = `Game Over!`;
+    elStatus.textContent = `Game Over! Click to play again`;
     board.forEach((row) => {
       row.forEach((tile) => {
         if (tile.status === TILE_STATUSES.MARKED) markTile(tile);

@@ -37,7 +37,6 @@ body {
 }
 h1 {
   position: relative;
-  width: min-content;
   margin: 1em;
   text-align: center;
 }
