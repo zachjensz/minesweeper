@@ -32,7 +32,7 @@ body {
   font-family: system-ui, sans-serif;
   font-size: 2rem;
   background: no-repeat,
-    center/cover url("public/topography.svg") var(--background-color);
+    center/cover url('public/topography.svg') var(--background-color);
   color: var(--text-color);
 }
 h1 {
@@ -58,27 +58,27 @@ h1 img {
   place-content: center;
   border: 2px solid var(--tile-border-color);
   user-select: none;
-  font: bold 1.8em monospace;
-  background: url("public/tile.svg") var(--tile-color);
+  font: bold 0.8em monospace;
+  background: url('public/tile.svg') var(--tile-color);
 }
 
-[data-status="hidden"] {
+[data-status='hidden'] {
   cursor: pointer;
 }
 
-[data-status="number"] {
+[data-status='number'] {
   background: unset;
 }
 
-[data-status="mine"] {
-  background: no-repeat center/cover url("public/mine.svg");
+[data-status='mine'] {
+  background: no-repeat center/cover url('public/mine.svg');
 }
-[data-status="marked"] {
+[data-status='marked'] {
   position: relative;
 }
-[data-status="marked"]::before {
-  content: "";
+[data-status='marked']::before {
+  content: '';
   position: absolute;
   inset: 0;
-  background: no-repeat center/cover url("public/flag.svg");
+  background: no-repeat center/cover url('public/flag.svg');
 }
